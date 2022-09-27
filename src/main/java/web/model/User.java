@@ -1,34 +1,33 @@
 package web.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String name;
     private String lastname;
-    private Byte age;
+    private int age;
 
     public User() {
     }
 
-    public User(String name, String lastname, Byte age) {
+    public User(int id, String name, String lastname, int age) {
+        this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.age = age;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -48,11 +47,11 @@ public class User {
         this.lastname = lastname;
     }
 
-    public Byte getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Byte age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -66,3 +65,5 @@ public class User {
                 '}';
     }
 }
+
+

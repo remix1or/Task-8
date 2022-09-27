@@ -19,7 +19,7 @@ import java.util.Properties;
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScan(value = "web")
-public class HibernateConfig {
+public class AppConfig {
 
     @Autowired
     private Environment env;
@@ -54,4 +54,5 @@ public class HibernateConfig {
         transactionManager.setSessionFactory(getSessionFactory().getObject());
         return transactionManager;
     }
+
 }
